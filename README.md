@@ -1,2 +1,3 @@
 # Unix-operating-system
-All system calls and library functions.
+All Unix system calls are implemented by my own logic.
+please collaborate and add necessary improvements.
