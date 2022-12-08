@@ -114,17 +114,7 @@ int create()
 	}
 	else
 	printf("Error in creating file!\n");
-
-Unix-operating-system/
-in
-main
-
 }
-
-Unix-operating-system/
-in
-main
-
 
 /*Created dup1() function for execute dup system call.
 dup system  call  creates  a copy of the file descriptor *oldfd*,
