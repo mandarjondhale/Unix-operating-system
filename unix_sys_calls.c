@@ -95,11 +95,15 @@ creat function creats a new file in your directory.
 syntax: int creat(const char *pathname, mode_t mode) */
 int create()
 {
-	int fd=open("x.txt",O_RDWR,0777);   //created file using open function
-	int fd1=creat("x1.txt",S_IRWXU);   //created file using creat function
-	printf("Files created successfully.\n");
-	write(fd,"hello world",5);
-	write(fd1,"hello universe",5);	
+	int fd=creat("x.txt",S_IRWXU);   //created file using creat function
+	if(fd>0)
+	{
+		printf("%d\n",fd);
+		printf("File created successfully.\n");
+		write(fd,"hello world",5);
+	}
+	else
+	printf("Error in creating file!\n");
 }
 
 /*Created dup1() function for execute dup system call.
