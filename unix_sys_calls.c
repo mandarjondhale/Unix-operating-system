@@ -13,13 +13,14 @@ int read_write();
 int lseek1();
 int create();
 int exit1();
+int dup1();
 int main()  //main function.
 {
 	int ch;
 	//while loop used for performing function calls multiple time.
 	while(1)
 	{
-		printf("\n1.fork\n2.read & write\n3.lseek\n4.create\n5.exit\n");
+		printf("\n1.fork\n2.read & write\n3.lseek\n4.create\n5.dup\n6.exit\n");
 		printf("\nEnter your choice\n");
 		scanf("%d",&ch);
 		//Switch case is for all functions.
@@ -37,7 +38,10 @@ int main()  //main function.
 			case 4: create();
 			break;
 			
-			case 5: exit1();
+			case 5: dup1();
+			break;
+			
+			case 6: exit1();
 			break;
 			
 			default: printf("Wrong choice.\n");
@@ -96,6 +100,17 @@ int create()
 	printf("Files created successfully.\n");
 	write(fd,"hello world",5);
 	write(fd1,"hello universe",5);	
+}
+
+/*Created dup1() function for execute dup system call.
+dup system  call  creates  a copy of the file descriptor *oldfd*,
+using the lowest-numbered unused descriptor for the new descriptor.
+syntax: int dup(int oldfd)  */
+int dup1()
+{
+	int fd = creat("xyz.txt",S_IRWXU);
+	int fd1 = dup(fd);
+	printf("Old fd = %d\nNew fd = %d\n",fd,fd1);
 }
 
 /*Exit function terminates running process forcefully.
