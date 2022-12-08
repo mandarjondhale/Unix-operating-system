@@ -95,7 +95,7 @@ int create()
 	int fd1=creat("x1.txt",S_IRWXU);   //created file using creat function
 	printf("Files created successfully.\n");
 	write(fd,"hello world",5);
-	write(fd1,"hello universe",5);	void exit(int status);
+	write(fd1,"hello universe",5);	
 }
 
 /*Exit function terminates running process forcefully.
