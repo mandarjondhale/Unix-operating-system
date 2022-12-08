@@ -84,7 +84,7 @@ int lseek1()
 	lseek(fd,5,SEEK_CUR);
 	read(fd,buff,5);
 	write(1,buff,5);
-}https://github.com/mandarjondhale/Unix-operating-system/upload
+}
 
 /*Created create() function for executing creat function call. 
 creat function creats a new file in your directory.
