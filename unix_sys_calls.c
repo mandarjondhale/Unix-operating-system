@@ -74,8 +74,13 @@ int read_write()
 {
 	char buff[50];
 	int fd=open("sample.txt",O_RDWR);
-	read(fd,buff,5);
-	write(1,buff,5);
+	if(fd>0)
+	{
+		read(fd,buff,5);
+		write(1,buff,5);
+	}
+	else
+	printf("Error in opening file!\n");
 }
 
 /*Created lseek1() function for executing lseek function.
@@ -85,9 +90,14 @@ int lseek1()
 {
 	char buff[50];
 	int fd=open("sample.txt",O_RDWR);
-	lseek(fd,5,SEEK_CUR);
-	read(fd,buff,5);
-	write(1,buff,5);
+	if(fd>0)
+	{
+		lseek(fd,5,SEEK_CUR);
+		read(fd,buff,5);
+		write(1,buff,5);
+	}
+	else
+	printf("Error in opening file!\n");
 }
 
 /*Created create() function for executing creat function call. 
@@ -100,11 +110,21 @@ int create()
 	{
 		printf("%d\n",fd);
 		printf("File created successfully.\n");
-		write(fd,"hello world",5);
+		write(fd,"hello world",12);
 	}
 	else
 	printf("Error in creating file!\n");
+
+Unix-operating-system/
+in
+main
+
 }
+
+Unix-operating-system/
+in
+main
+
 
 /*Created dup1() function for execute dup system call.
 dup system  call  creates  a copy of the file descriptor *oldfd*,
